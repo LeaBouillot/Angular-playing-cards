@@ -1,17 +1,11 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
+import { Monster } from '../../models/monster.model';
 
 @Component({
   selector: 'app-playing-card',
-  imports: [],
   templateUrl: './playing-card.html',
-  styleUrl: './playing-card.css'
+  styleUrls: ['./playing-card.css'], // <-- c'était "styleUrl", corrigé en "styleUrls"
 })
 export class PlayingCard {
-
-  name: string="My monster";
-  hp: number=40;
-  figureCation: string="N°001 Monster";
-  attackName: string="Geo Impact";
-  attackStrength: number=60;
-  attackDescription: string=" This is long description of a monster attack. Probably something todo with electriccity...";
+  @Input() monster: Monster = new Monster();
 }
